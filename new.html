@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive Portfolio</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+        }
+
+        .header1 {
+            background-image: url('linkdin banner.png');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 396px;
+            max-width: 1584px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        header {
+            background-image: url('linkdin banner.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            /* height: 100vh; */
+            /* height: 396px; Setting the height to match the 1584x396 ratio */
+            /* max-width: 2000px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            min-height: 396px;
+            /* background-attachment: fixed; */
+            background-position: center;
+            /* background-repeat: no-repeat; */
+            /* background-size: cover; */
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            z-index: 100;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 15px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 0 auto;
+            max-width: 1500px;
+        }
+
+        .about-me {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin-right: 20px;
+            /* Space between About and Skills */
+        }
+
+        .skills {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .skills ul li {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+
+        .skills ul li:hover {
+            transform: scale(1.1);
+        }
+
+        .projects,
+        .contact {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .projects:hover,
+        .contact:hover,
+        .about-me:hover,
+        .skills:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s;
+
+        }
+
+        .projects img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .projects img:hover {
+            transform: scale(1.05);
+        }
+
+        .projects a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 10px;
+
+
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Form styling */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact input[type="submit"],.about-me a {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact input[type="submit"]:hover, {
+            background-color: #555;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .about-me {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav> -->
+
+    <header>
+        <div>
+            <!-- <h1>Your Name</h1>
+        <p>Software Developer | Web Enthusiast | Tech Support Engineer</p> -->
+        </div>
+    </header>
+
+    <section id="about">
+
+        <div class="flex-container">
+            <div class="about-me">
+                <h2>About Me</h2>
+                <p style="text-align:center;">Hi! I'm a software developer with 10 months of experience working with web technologies like Laravel,
+                    PostgreSQL, and MongoDB. Currently working at NIC Bangalore, I enjoy creating functional and
+                    responsive web applications.</p>               
+            </div>
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML&CSS</li>
+                    <li>PHP</li>
+                    <li>JavaScript</li>
+                    <li>Laravel</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+            <div class="projects">
+                <h2>Projects</h2>
+                <img src="KATwebsite.png" alt="Project Image">
+                <a href="https://katservices.karnataka.gov.in/" target="_blank">KAT Services Website</a>
+            </div>
+            
+                <div class="about-me">
+                    <center><h2>Download My Resume</h2>
+                    <p>You can download my resume by clicking the link below:</p>
+                    <a href="SumaanKhanRBagewadi_Resume.pdf" download style="text-decoration: none; color: #fff; background-color: #333; padding: 10px 20px; border-radius: 5px;">Download
+                        Resume</a></center>
+                </div>
+            
+            <div class="contact">
+                <h2>Contact Me</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="projects">
+
+
+    </section>
+
+    <section id="contact">
+
+    </section> -->
+
+    <footer>
+        <p>&copy; Sample Personal Portfolio.</p>
+    </footer>
+
+</body>
+
+</html>

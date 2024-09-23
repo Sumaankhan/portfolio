@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced Interactive Portfolio</title>
+        <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-image: url('linkdin banner.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            /* height: 100vh; */
+            /* height: 396px; Setting the height to match the 1584x396 ratio */
+            /* max-width: 2000px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            min-height: 396px;
+            /* background-attachment: fixed; */
+            background-position: center;
+            /* background-repeat: no-repeat; */
+            /* background-size: cover; */
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            z-index: 100;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 15px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .skills, .projects, .contact {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .skills ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .skills ul li:hover {
+            transform: scale(1.1);
+        }
+
+        .projects img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .projects img:hover {
+            transform: scale(1.05);
+        }
+
+        .projects a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Parallax effect */
+        .parallax {
+            background-image: url('https://via.placeholder.com/1920x300');
+            min-height: 300px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Form styling */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+            .skills ul {
+                flex-direction: column;
+            }
+
+            .skills ul li {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    </head>
+    <body>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+<br><br><br>
+        <header>
+            <div>
+                <!-- <h1>Your Name</h1>
+        <p>Software Developer | Web Enthusiast | Tech Support Engineer</p> -->
+            </div>
+        </header>
+
+        <section id="about">
+            <center>
+                <h2>About Me</h2>
+                <p>Hi! I'm a software developer with 10 months of experience
+                    working with web technologies like Laravel, PostgreSQL, and
+                    MongoDB. Currently working at NIC Bangalore, I enjoy
+                    creating functional and responsive web applications.</p>
+            </center>
+        </section>
+
+        <!-- <section class="parallax"></section> -->
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Laravel</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <img src="https://via.placeholder.com/500x300"
+                    alt="Project Image">
+                <a href="https://katservices.karnataka.gov.in/"
+                    target="_blank">KAT Services Website</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact">
+                <form>
+                    <input type="text" name="name" placeholder="Your Name"
+                        required>
+                    <input type="email" name="email" placeholder="Your Email"
+                        required>
+                    <textarea name="message" rows="5" placeholder="Your Message"
+                        required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+
+    </body>
+</html>
